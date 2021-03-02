@@ -14,8 +14,12 @@ spec:
 
   - name: jenkins-container
     image: jenkins:alpine
+    volumeMounts:
+      - mountPath: /volume-dentro-container
+        name: primeiro-volume
+
   volumes:
     - name: primeiro-volume
       hostPath:
-        path: /home/danilo/workspace_vs_code/volume-kubernetes
-        type: Directory
+        path: /home/primeiro-volume 
+        type: DirectoryOrCreate
